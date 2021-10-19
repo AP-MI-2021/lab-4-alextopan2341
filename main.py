@@ -20,15 +20,13 @@ def gasire_sir_de_caractere(l, sir):
         if str(element) == str(sir):
             ok = 1
     if ok == 1:
-        print("Da")
-        return True
+        return "Da"
     else:
-        print("Nu")
-        return False
+        return "Nu"
 
 def test_gasire_sir_de_caractere():
-    assert gasire_sir_de_caractere(["banana", "lapte", "oua"], "banana") == True
-    assert gasire_sir_de_caractere(["aaa", "bbb", "cmtc", "aaa"], "drd") == False
+    assert gasire_sir_de_caractere(["banana", "lapte", "oua"], "banana") == "Da"
+    assert gasire_sir_de_caractere(["aaa", "bbb", "cmtc", "aaa"], "drd") == "Nu"
 
 def sir_de_caractere_gasit(l):
     '''
