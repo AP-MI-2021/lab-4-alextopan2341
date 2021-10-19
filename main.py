@@ -1,3 +1,4 @@
+import copy
 from collections import Counter
 def citire_lista_cuvinte():
     l=[]
@@ -20,14 +21,15 @@ def gasire_sir_de_caractere(l, sir):
             ok = 1
     if ok == 1:
         print("Da")
+        return True
     else:
         print("Nu")
-'''
+        return False
+
 def test_gasire_sir_de_caractere():
-    assert gasire_sir_de_caractere(['banana', 'lapte', 'oua'], 'banana') == 'Da'
-    assert gasire_sir_de_caractere(['facultate', 'sesiune', 'materie'], 'materie') == Da
-    assert gasire_sir_de_caractere(['aaa', 'bbb', 'cmtc', 'aaa'], 'drd') == 'Nu'
-'''
+    assert gasire_sir_de_caractere(["banana", "lapte", "oua"], "banana") == True
+    assert gasire_sir_de_caractere(["aaa", "bbb", "cmtc", "aaa"], "drd") == False
+
 def sir_de_caractere_gasit(l):
     '''
     Determina in rezultat ,lista de stringuri care au frecventa de cel putin doua ori, sau mesajul "Unic" in caz contrar
@@ -45,6 +47,7 @@ def sir_de_caractere_gasit(l):
         return rezultat
     else:
         print("UNIC")
+
 def sir_palindrom(l):
     '''
     Determina o lista cu siruri palindrom
@@ -65,16 +68,17 @@ def exercitiul5(l):
     element = []
     for i in l:
         if l.count(i) > max:
-            element = l[i]
+            element = copy.deepcopy(i)
             max= l.count(i)
     i = 0
     while i < len(l):
         element1 = l[i]
         if element1 != element:
             element1 = max
+    i = i+1
 
 def main():
-    #test_gasire_sir_de_caractere()
+    test_gasire_sir_de_caractere()
     test_sir_palindrom()
     l = []
     while True:
